@@ -24,13 +24,12 @@ body {
 }
 
 main {
-  padding: 20px;
+  padding: 2rem 2rem 2rem 2rem;
   box-sizing: border-box;
   margin: 0;
   height: 100%;
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1;
+
 }
 
 .montserrat-title {
@@ -56,26 +55,25 @@ main {
 }
 
 .overview {
-  padding-bottom: 20px;
-  font-size: 0.8rem;
+  padding-bottom: 4.5rem;
+  font-size: 1rem;
   font-weight: 300;
   font-family: 'montserrat-title';
+
 }
 
 h1 {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  margin-left: 10px;
+  font-size: 2.5rem;
+
 }
 
 #suggestion {
-  display: flex;
-  flex: row wrap;
-  align-items: flex-start;
-  max-width: 280px;
+  max-width: 70vw;
   line-height: 1.5;
-  padding-bottom: 2rem;
+  padding: 1rem 0 5rem 1rem;
 }
 
 #icon {
@@ -95,28 +93,49 @@ h1 {
 }
 
 .forcast {
-  display: grid;
-
+  font-size: 1.2rem;
 }
 
 .temp {
   grid-area: temp;
-  text-align: right;
-  width: 40vw;
+  text-align: end;
   overflow: none;
+  height: 1.7rem;
+  justify-self: end;
 }
 
 .day {
   text-align: left;
   grid-area: day;
-  width: 40vw;
+  height: 1.7rem;
 }
 
 .lines {
   display: grid;
   grid-template-columns: 2 1fr;
+  grid-template-rows: auto;
+  box-sizing: border-box;
   grid-template-areas:
-    "day temp";
-  border: 0;
-  border-bottom: 1px dashed black;
+    "day  temp";
+  border-bottom: 0.1rem dotted black;
+  padding: 0.7rem;
+}
+
+.lines.sunny {
+  border-bottom: 0.2rem dashed var(--sunny-color);
+}
+
+.lines.cloudy {
+  border-bottom: 0.2rem dashed var(--cloudy-color);
+}
+
+.lines.rainy {
+  border-bottom: 0.2rem dashed var(--rainy-color);
+}
+
+#weather,
+#sunrise,
+#temp,
+#sunset:first-letter {
+  text-transform: capitalize;
 }
